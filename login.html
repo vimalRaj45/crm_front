@@ -16,9 +16,9 @@
             --bg-primary: #06060f;
             --bg-card: rgba(255,255,255,0.04);
             --border: rgba(255,255,255,0.08);
-            --accent: #7c3aed;
-            --accent-light: #a78bfa;
-            --accent-glow: rgba(124,58,237,0.35);
+            --accent: #8b5cf6;
+            --accent-light: #c4b5fd;
+            --accent-glow: rgba(139, 92, 246, 0.25);
             --text: #f1f1f4;
             --text-dim: #8b8b9e;
             --danger: #ef4444;
@@ -191,8 +191,8 @@
     <div class="login-card">
         <div class="brand">
             <div class="brand-icon"><i class="bi bi-radar"></i></div>
-            <h1>Spirelia Intelligence</h1>
-            <p>Secure Access Portal</p>
+            <h1>Spirelia Intel</h1>
+            <p>Intelligence Portal</p>
         </div>
 
         <div id="msgBox" class="msg"></div>
@@ -229,7 +229,7 @@
         const token = localStorage.getItem('spirelia_token');
         if (!token) return;
         try {
-            const r = await fetch('https://crm-back-43yb.onrender.com/api/check-auth', { headers: { Authorization: 'Bearer ' + token } });
+            const r = await fetch('https://crm-back-x4c6.onrender.com/api/check-auth', { headers: { Authorization: 'Bearer ' + token } });
             if (r.ok) window.location.href = '/';
         } catch {}
     })();
@@ -283,7 +283,7 @@
 
         setLoading(sendBtn, true);
         try {
-            const r = await fetch('https://crm-back-43yb.onrender.com/api/send-otp', {
+            const r = await fetch('https://crm-back-x4c6.onrender.com/api/send-otp', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email }),
@@ -309,7 +309,7 @@
 
         setLoading(verifyBtn, true);
         try {
-            const r = await fetch('https://crm-back-43yb.onrender.com/api/verify-otp', {
+            const r = await fetch('https://crm-back-x4c6.onrender.com/api/verify-otp', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email: currentEmail, otp }),
